@@ -32,10 +32,10 @@ namespace appStore
             };
             count = await Counter.getSizeData();
             var client = HTTPRequest.getInstance();
-
+            Counter.updateCounter("product");
             SetResponse response = await client.SetTaskAsync("product/" + count.countProduct, data);
             // productData dataResult = response.ResultAs<productData>();
-            Counter.updateCounter("product");
+            
             MessageBox.Show("Add Data Oke", count.countProduct);
 
         }

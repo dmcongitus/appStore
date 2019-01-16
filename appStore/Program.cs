@@ -16,7 +16,7 @@ namespace appStore
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMasterDelete());
+            Application.Run(new FormMasterRead());
         }
     }
 }

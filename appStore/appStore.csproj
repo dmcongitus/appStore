@@ -85,6 +85,12 @@
     <Compile Include="FormMasterDelete.Designer.cs">
       <DependentUpon>FormMasterDelete.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMasterRead.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMasterRead.Designer.cs">
+      <DependentUpon>FormMasterRead.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMasterUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMasterDelete.resx">
       <DependentUpon>FormMasterDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMasterRead.resx">
+      <DependentUpon>FormMasterRead.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMasterUpdate.resx">
       <DependentUpon>FormMasterUpdate.cs</DependentUpon>
