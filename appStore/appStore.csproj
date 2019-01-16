@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="billData.cs" />
     <Compile Include="codeData.cs" />
+    <Compile Include="Counter.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMaster.resx">
+      <DependentUpon>FormMaster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -39,15 +39,20 @@ namespace appStore
             }
         }
 
+        
         private async void btnLogin_Click(object sender, EventArgs e)
         {
+           
+         //  MessageBox.Show(test.countBill);
             var dataInput = new userData
             {
                 account = txbAccount.Text,
                 password = txbPassword.Text
             };
             FirebaseResponse response = await client.GetTaskAsync("user");
+            
             userData data = response.ResultAs<userData>();
+            
             if(dataInput.account == data.account && dataInput.password == data.password)
             {
                 var frm = new Form2();
