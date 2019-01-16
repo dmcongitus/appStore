@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace appStore
 {
-    class productData
+    class Product
     {
         public string deleted { get; set; }
         public string name { get; set; }
@@ -14,5 +14,6 @@ namespace appStore
         public string saleAmount { get; set; }
         public string totalAmount { get; set; }
         public string type { get; set; }
+        public string imageUrl { get; set; }
     }
 }

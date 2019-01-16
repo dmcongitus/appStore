@@ -19,30 +19,53 @@ namespace appStore
 
         private async void btnCheckUpdate_Click(object sender, EventArgs e)
         {
-            Counter count = new Counter();
-            var data = new productData();
-
-            count = await Counter.getSizeData();
             string idInput = txbID.Text;
-            if(Convert.ToInt32(idInput)<1  || Convert.ToInt32(idInput) > Convert.ToInt32(count.countProduct)){
+            if(await HTTPRequest.CheckSizeData("product",idInput)==false){
                 MessageBox.Show("ID khong hop le");
             }
             else
             {
                 var client = HTTPRequest.getInstance();
-                var newData = new productData
+                var newData = new Product
                 {
+                    //deleted = "false",
                     name = txbName.Text,
                     type = txbType.Text,
                     saleAmount = txbSaleAmount.Text,
                     totalAmount = txbTotalAmount.Text,
                     rate = txbRate.Text
                 };
-                FirebaseResponse response = await client.UpdateTaskAsync("product/" + idInput.ToString(), newData);
-                MessageBox.Show("Update Thanh Cong");
+                HTTPRequest.updateDataProduct(idInput, newData);
             }
                 
             
+        }
+
+        private async void txbID_TextChangedAsync(object sender, EventArgs e)
+        {
+            if (txbID.Text != "")
+            if (await HTTPRequest.CheckSizeData("product", txbID.Text)==false)
+            {
+                txbName.Text = "";
+                txbRate.Text = "";
+                txbSaleAmount.Text = "";
+                txbTotalAmount.Text = "";
+                txbType.Text = "";
+            }
+            else
+            {
+                Product data = await HTTPRequest.getDataProduct(txbID.Text);
+                txbName.ReadOnly = false;
+                txbRate.ReadOnly = false;
+                txbSaleAmount.ReadOnly = false;
+                txbTotalAmount.ReadOnly = false;
+                txbType.ReadOnly = false;
+                txbName.Text = data.name;
+                txbRate.Text = data.rate;
+                txbSaleAmount.Text = data.saleAmount;
+                txbTotalAmount.Text = data.totalAmount;
+                txbType.Text = data.type;
+            }
         }
     }
 }

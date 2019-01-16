@@ -16,6 +16,10 @@ namespace appStore
         public string countProduct { get; set; }
 
         //Lay size cua database
+        public Counter()
+        {
+            
+        }
         public static async Task<Counter> getSizeData()
         {
             var client = HTTPRequest.getInstance();
@@ -29,23 +33,21 @@ namespace appStore
         {
             Counter newData = new Counter();
             newData = await getSizeData();
-            if(name == "bill")
+            switch (name)
             {
-                newData.countBill = upValueString(newData.countBill);
-            } else if(name == "code")
-            {
-                newData.countCode = upValueString(newData.countCode);
-            }else if(name == "product")
-            {
-                newData.countProduct = upValueString(newData.countProduct);
+                case "bill":
+                    newData.countBill = upValueString(newData.countBill);
+                    break;
+                case "code":
+                    newData.countCode = upValueString(newData.countCode);
+                    break;
+                case "product":         
+                    newData.countProduct = upValueString(newData.countProduct);
+                    break;
             }
-            else
-            {
-                MessageBox.Show("gia tri name khong hop le");
-            }
-
             var client = HTTPRequest.getInstance();
-            FirebaseResponse response = await client.UpdateTaskAsync("counter", newData);
+            await client.UpdateTaskAsync("counter", newData);
+  
         }
         //Tang gia tri cua str len 1 don vi
         public static string upValueString(string str)

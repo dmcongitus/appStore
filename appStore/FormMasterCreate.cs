@@ -21,7 +21,7 @@ namespace appStore
         private async void btnCheckCreate_Click(object sender, EventArgs e)
         {
             Counter count = new Counter();
-            var data = new productData
+            var data = new Product
             {
                 deleted = "false",
                 name = txbName.Text,
@@ -30,14 +30,9 @@ namespace appStore
                 totalAmount = txbTotalAmount.Text,
                 type = txbType.Text
             };
-            count = await Counter.getSizeData();
-            var client = HTTPRequest.getInstance();
+            HTTPRequest.setDataProduct(data);
             
-            SetResponse response = await client.SetTaskAsync("product/" + Counter.upValueString(count.countProduct), data);
-            // productData dataResult = response.ResultAs<productData>();
-            Counter.updateCounter("product");
-            MessageBox.Show("Add Data Oke", count.countProduct);
-
+           
         }
     }
 }

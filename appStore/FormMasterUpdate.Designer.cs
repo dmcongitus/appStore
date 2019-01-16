@@ -33,20 +33,20 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCheckUpdate = new System.Windows.Forms.Button();
             this.txbType = new System.Windows.Forms.TextBox();
+            this.txbSaleAmount = new System.Windows.Forms.TextBox();
             this.txbTotalAmount = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txbRate = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txbID = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txbName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnRead = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txbSaleAmount = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txbID = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -106,15 +106,34 @@
             // 
             this.txbType.Location = new System.Drawing.Point(107, 162);
             this.txbType.Name = "txbType";
+            this.txbType.ReadOnly = true;
             this.txbType.Size = new System.Drawing.Size(100, 20);
             this.txbType.TabIndex = 1;
+            // 
+            // txbSaleAmount
+            // 
+            this.txbSaleAmount.Location = new System.Drawing.Point(107, 100);
+            this.txbSaleAmount.Name = "txbSaleAmount";
+            this.txbSaleAmount.ReadOnly = true;
+            this.txbSaleAmount.Size = new System.Drawing.Size(100, 20);
+            this.txbSaleAmount.TabIndex = 1;
             // 
             // txbTotalAmount
             // 
             this.txbTotalAmount.Location = new System.Drawing.Point(107, 126);
             this.txbTotalAmount.Name = "txbTotalAmount";
+            this.txbTotalAmount.ReadOnly = true;
             this.txbTotalAmount.Size = new System.Drawing.Size(100, 20);
             this.txbTotalAmount.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(38, 104);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "SaleAmount";
             // 
             // label4
             // 
@@ -138,6 +157,7 @@
             // 
             this.txbRate.Location = new System.Drawing.Point(107, 71);
             this.txbRate.Name = "txbRate";
+            this.txbRate.ReadOnly = true;
             this.txbRate.Size = new System.Drawing.Size(100, 20);
             this.txbRate.TabIndex = 1;
             // 
@@ -150,10 +170,28 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Rate";
             // 
+            // txbID
+            // 
+            this.txbID.Location = new System.Drawing.Point(107, 19);
+            this.txbID.Name = "txbID";
+            this.txbID.Size = new System.Drawing.Size(100, 20);
+            this.txbID.TabIndex = 1;
+            this.txbID.TextChanged += new System.EventHandler(this.txbID_TextChangedAsync);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(40, 24);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(18, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "ID";
+            // 
             // txbName
             // 
             this.txbName.Location = new System.Drawing.Point(107, 45);
             this.txbName.Name = "txbName";
+            this.txbName.ReadOnly = true;
             this.txbName.Size = new System.Drawing.Size(100, 20);
             this.txbName.TabIndex = 1;
             // 
@@ -192,38 +230,6 @@
             this.btnRead.TabIndex = 0;
             this.btnRead.Text = "READ";
             this.btnRead.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(38, 104);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "SaleAmount";
-            // 
-            // txbSaleAmount
-            // 
-            this.txbSaleAmount.Location = new System.Drawing.Point(107, 100);
-            this.txbSaleAmount.Name = "txbSaleAmount";
-            this.txbSaleAmount.Size = new System.Drawing.Size(100, 20);
-            this.txbSaleAmount.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(40, 24);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(18, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "ID";
-            // 
-            // txbID
-            // 
-            this.txbID.Location = new System.Drawing.Point(107, 19);
-            this.txbID.Name = "txbID";
-            this.txbID.Size = new System.Drawing.Size(100, 20);
-            this.txbID.TabIndex = 1;
             // 
             // FormMasterUpdate
             // 

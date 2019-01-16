@@ -56,7 +56,7 @@
             this.panel1.Controls.Add(this.btnCreate);
             this.panel1.Location = new System.Drawing.Point(6, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(708, 431);
+            this.panel1.Size = new System.Drawing.Size(322, 359);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -70,9 +70,9 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.txbName);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(16, 64);
+            this.panel2.Location = new System.Drawing.Point(11, 82);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(681, 343);
+            this.panel2.Size = new System.Drawing.Size(297, 264);
             this.panel2.TabIndex = 1;
             // 
             // btnCheckCreate
@@ -151,27 +151,27 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(530, 8);
+            this.btnDelete.Location = new System.Drawing.Point(182, 45);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(167, 45);
+            this.btnDelete.Size = new System.Drawing.Size(126, 31);
             this.btnDelete.TabIndex = 0;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(357, 8);
+            this.btnUpdate.Location = new System.Drawing.Point(11, 45);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(167, 45);
+            this.btnUpdate.Size = new System.Drawing.Size(126, 31);
             this.btnUpdate.TabIndex = 0;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = true;
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(184, 8);
+            this.btnRead.Location = new System.Drawing.Point(182, 8);
             this.btnRead.Name = "btnRead";
-            this.btnRead.Size = new System.Drawing.Size(167, 45);
+            this.btnRead.Size = new System.Drawing.Size(126, 31);
             this.btnRead.TabIndex = 0;
             this.btnRead.Text = "READ";
             this.btnRead.UseVisualStyleBackColor = true;
@@ -180,18 +180,18 @@
             // 
             this.btnCreate.Location = new System.Drawing.Point(11, 8);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(167, 45);
+            this.btnCreate.Size = new System.Drawing.Size(126, 31);
             this.btnCreate.TabIndex = 0;
             this.btnCreate.Text = "CREATE";
             this.btnCreate.UseVisualStyleBackColor = true;
             // 
-            // FormMaster
+            // FormMasterCreate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(723, 440);
+            this.ClientSize = new System.Drawing.Size(341, 368);
             this.Controls.Add(this.panel1);
-            this.Name = "FormMaster";
+            this.Name = "FormMasterCreate";
             this.Text = "FormMaster";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

@@ -31,7 +31,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnRead = new System.Windows.Forms.Button();
-            this.btnGetInfo = new System.Windows.Forms.Button();
             this.txbType = new System.Windows.Forms.TextBox();
             this.txbSaleAmount = new System.Windows.Forms.TextBox();
             this.txbTotalAmount = new System.Windows.Forms.TextBox();
@@ -45,54 +44,45 @@
             this.txbName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCheckDelete = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCheckDelete = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(530, 8);
+            this.btnDelete.Location = new System.Drawing.Point(181, 43);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(167, 45);
+            this.btnDelete.Size = new System.Drawing.Size(114, 28);
             this.btnDelete.TabIndex = 0;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(357, 8);
+            this.btnUpdate.Location = new System.Drawing.Point(11, 42);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(167, 45);
+            this.btnUpdate.Size = new System.Drawing.Size(107, 29);
             this.btnUpdate.TabIndex = 0;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = true;
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(184, 8);
+            this.btnRead.Location = new System.Drawing.Point(181, 9);
             this.btnRead.Name = "btnRead";
-            this.btnRead.Size = new System.Drawing.Size(167, 45);
+            this.btnRead.Size = new System.Drawing.Size(114, 28);
             this.btnRead.TabIndex = 0;
             this.btnRead.Text = "READ";
             this.btnRead.UseVisualStyleBackColor = true;
-            // 
-            // btnGetInfo
-            // 
-            this.btnGetInfo.Location = new System.Drawing.Point(44, 209);
-            this.btnGetInfo.Name = "btnGetInfo";
-            this.btnGetInfo.Size = new System.Drawing.Size(75, 23);
-            this.btnGetInfo.TabIndex = 2;
-            this.btnGetInfo.Text = "Get Info";
-            this.btnGetInfo.UseVisualStyleBackColor = true;
-            this.btnGetInfo.Click += new System.EventHandler(this.btnGetInfo_Click);
             // 
             // txbType
             // 
             this.txbType.Location = new System.Drawing.Point(107, 162);
             this.txbType.Name = "txbType";
+            this.txbType.ReadOnly = true;
             this.txbType.Size = new System.Drawing.Size(100, 20);
             this.txbType.TabIndex = 1;
             // 
@@ -100,6 +90,7 @@
             // 
             this.txbSaleAmount.Location = new System.Drawing.Point(107, 100);
             this.txbSaleAmount.Name = "txbSaleAmount";
+            this.txbSaleAmount.ReadOnly = true;
             this.txbSaleAmount.Size = new System.Drawing.Size(100, 20);
             this.txbSaleAmount.TabIndex = 1;
             // 
@@ -107,6 +98,7 @@
             // 
             this.txbTotalAmount.Location = new System.Drawing.Point(107, 126);
             this.txbTotalAmount.Name = "txbTotalAmount";
+            this.txbTotalAmount.ReadOnly = true;
             this.txbTotalAmount.Size = new System.Drawing.Size(100, 20);
             this.txbTotalAmount.TabIndex = 1;
             // 
@@ -141,6 +133,7 @@
             // 
             this.txbRate.Location = new System.Drawing.Point(107, 71);
             this.txbRate.Name = "txbRate";
+            this.txbRate.ReadOnly = true;
             this.txbRate.Size = new System.Drawing.Size(100, 20);
             this.txbRate.TabIndex = 1;
             // 
@@ -159,6 +152,7 @@
             this.txbID.Name = "txbID";
             this.txbID.Size = new System.Drawing.Size(100, 20);
             this.txbID.TabIndex = 1;
+            this.txbID.TextChanged += new System.EventHandler(this.txbID_TextChanged);
             // 
             // label6
             // 
@@ -173,6 +167,7 @@
             // 
             this.txbName.Location = new System.Drawing.Point(107, 45);
             this.txbName.Name = "txbName";
+            this.txbName.ReadOnly = true;
             this.txbName.Size = new System.Drawing.Size(100, 20);
             this.txbName.TabIndex = 1;
             // 
@@ -188,7 +183,6 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.btnCheckDelete);
-            this.panel2.Controls.Add(this.btnGetInfo);
             this.panel2.Controls.Add(this.txbType);
             this.panel2.Controls.Add(this.txbSaleAmount);
             this.panel2.Controls.Add(this.txbTotalAmount);
@@ -201,16 +195,26 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.txbName);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(16, 64);
+            this.panel2.Location = new System.Drawing.Point(11, 77);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(681, 343);
+            this.panel2.Size = new System.Drawing.Size(284, 273);
             this.panel2.TabIndex = 1;
+            // 
+            // btnCheckDelete
+            // 
+            this.btnCheckDelete.Location = new System.Drawing.Point(120, 211);
+            this.btnCheckDelete.Name = "btnCheckDelete";
+            this.btnCheckDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnCheckDelete.TabIndex = 2;
+            this.btnCheckDelete.Text = "Delete";
+            this.btnCheckDelete.UseVisualStyleBackColor = true;
+            this.btnCheckDelete.Click += new System.EventHandler(this.btnCheckDelete_Click);
             // 
             // btnCreate
             // 
             this.btnCreate.Location = new System.Drawing.Point(11, 8);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(167, 45);
+            this.btnCreate.Size = new System.Drawing.Size(107, 28);
             this.btnCreate.TabIndex = 0;
             this.btnCreate.Text = "CREATE";
             this.btnCreate.UseVisualStyleBackColor = true;
@@ -224,24 +228,14 @@
             this.panel1.Controls.Add(this.btnCreate);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(708, 431);
+            this.panel1.Size = new System.Drawing.Size(315, 363);
             this.panel1.TabIndex = 2;
-            // 
-            // btnCheckDelete
-            // 
-            this.btnCheckDelete.Location = new System.Drawing.Point(148, 209);
-            this.btnCheckDelete.Name = "btnCheckDelete";
-            this.btnCheckDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnCheckDelete.TabIndex = 2;
-            this.btnCheckDelete.Text = "Delete";
-            this.btnCheckDelete.UseVisualStyleBackColor = true;
-            this.btnCheckDelete.Click += new System.EventHandler(this.btnCheckDelete_Click);
             // 
             // FormMasterDelete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(342, 394);
             this.Controls.Add(this.panel1);
             this.Name = "FormMasterDelete";
             this.Text = "FormMasterDelete";
@@ -257,7 +251,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnRead;
-        private System.Windows.Forms.Button btnGetInfo;
         private System.Windows.Forms.TextBox txbType;
         private System.Windows.Forms.TextBox txbSaleAmount;
         private System.Windows.Forms.TextBox txbTotalAmount;

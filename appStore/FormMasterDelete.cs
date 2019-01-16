@@ -14,56 +14,53 @@ namespace appStore
 {
     public partial class FormMasterDelete : Form
     {
-        productData data = new productData();
+        Product data = new Product();
         public FormMasterDelete()
         {
             InitializeComponent();
         }
 
-        private async void btnGetInfo_Click(object sender, EventArgs e)
-        {
-            Counter count = new Counter();
-            
 
-            count = await Counter.getSizeData();
-            string idInput = txbID.Text;
-            if (Convert.ToInt32(idInput) < 1 || Convert.ToInt32(idInput) > Convert.ToInt32(count.countProduct))
-            {
-                MessageBox.Show("ID khong hop le");
-            }
-            else
-            {
-                var client = HTTPRequest.getInstance();
-         
-                FirebaseResponse response = await client.GetTaskAsync("product/" + idInput.ToString());
-                data = response.ResultAs<productData>();
-                txbName.Text = data.name;
-                txbRate.Text = data.rate;
-                txbSaleAmount.Text = data.saleAmount;
-                txbTotalAmount.Text = data.saleAmount;
-                txbType.Text = data.type;
-            }
-        }
 
         private async void btnCheckDelete_Click(object sender, EventArgs e)
         {
-            Counter count = new Counter();
-            var data = new productData();
-
-            count = await Counter.getSizeData();
             string idInput = txbID.Text;
-            if (Convert.ToInt32(idInput) < 1 || Convert.ToInt32(idInput) > Convert.ToInt32(count.countProduct))
+            if (await HTTPRequest.CheckSizeData("product", idInput) == false)
             {
                 MessageBox.Show("ID khong hop le");
             }
             else
             {
-                var client = HTTPRequest.getInstance();
-                FirebaseResponse response = await client.GetTaskAsync("product/" + idInput.ToString());
-                data = response.ResultAs<productData>();
-                data.deleted = "true";
-                FirebaseResponse responseUpdate = await client.UpdateTaskAsync("product/" + idInput.ToString(), data);
-                MessageBox.Show("Xoa Thanh Cong");
+                HTTPRequest.deleteDataProduct(idInput.ToString());
+                //
+                txbID.Text = "";
+                txbName.Text = "";
+                txbRate.Text = "";
+                txbSaleAmount.Text ="";
+                txbTotalAmount.Text ="";
+                txbType.Text = "";
+            }
+        }
+
+        private async void txbID_TextChanged(object sender, EventArgs e)
+        {
+            if (txbID.Text != "")
+            if (await HTTPRequest.CheckSizeData("product", txbID.Text) == false)
+            {
+                txbName.Text = "";
+                txbRate.Text = "";
+                txbSaleAmount.Text = "";
+                txbTotalAmount.Text = "";
+                txbType.Text = "";
+            }
+            else
+            {
+                Product data = await HTTPRequest.getDataProduct(txbID.Text);
+                txbName.Text = data.name;
+                txbRate.Text = data.rate;
+                txbSaleAmount.Text = data.saleAmount;
+                txbTotalAmount.Text = data.totalAmount;
+                txbType.Text = data.type;
             }
         }
     }
