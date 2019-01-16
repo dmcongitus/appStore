@@ -91,6 +91,7 @@
     <Compile Include="FormTransaction.Designer.cs">
       <DependentUpon>FormTransaction.cs</DependentUpon>
     </Compile>
+    <Compile Include="HTTPRequest.cs" />
     <Compile Include="productData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

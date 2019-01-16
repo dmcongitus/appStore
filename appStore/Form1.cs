@@ -16,13 +16,8 @@ namespace appStore
 {
     public partial class Form1 : Form
     {
-        IFirebaseConfig config = new FirebaseConfig
-        {
-            BasePath = "https://appstoredmcongitus.firebaseio.com/",
-            AuthSecret = "PyTSdTC43NxSQfak0PEOGokVqz2y5smSmBdWBRhz"
-   
-        };
-        IFirebaseClient client;
+      
+
         public Form1()
         {
             InitializeComponent();
@@ -30,25 +25,24 @@ namespace appStore
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            client = new FireSharp.FirebaseClient(config);
             txbAccount.Text = "";
             txbPassword.Text = "";
-            if (client == null)
-            {
-                MessageBox.Show("Can not connect to DataBase!!");
-            }
         }
 
         
         private async void btnLogin_Click(object sender, EventArgs e)
         {
            
-         //  MessageBox.Show(test.countBill);
+        
             var dataInput = new userData
             {
                 account = txbAccount.Text,
                 password = txbPassword.Text
             };
+
+
+            var client = HTTPRequest.getInstance();
+
             FirebaseResponse response = await client.GetTaskAsync("user");
             
             userData data = response.ResultAs<userData>();
