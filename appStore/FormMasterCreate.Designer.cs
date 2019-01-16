@@ -1,6 +1,6 @@
 ﻿namespace appStore
 {
-    partial class FormMaster
+    partial class FormMasterCreate
     {
         /// <summary>
         /// Required designer variable.

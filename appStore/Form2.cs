@@ -19,7 +19,7 @@ namespace appStore
 
         private void btnMaster_Click(object sender, EventArgs e)
         {
-            var frm = new FormMaster();
+            var frm = new FormMasterCreate();
             frm.Location = this.Location;
             frm.StartPosition = FormStartPosition.Manual;
             frm.FormClosing += delegate { this.Show(); };

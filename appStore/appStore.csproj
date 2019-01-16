@@ -73,11 +73,23 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMaster.cs">
+    <Compile Include="FormMasterCreate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMaster.Designer.cs">
-      <DependentUpon>FormMaster.cs</DependentUpon>
+    <Compile Include="FormMasterCreate.Designer.cs">
+      <DependentUpon>FormMasterCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMasterDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMasterDelete.Designer.cs">
+      <DependentUpon>FormMasterDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMasterUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMasterUpdate.Designer.cs">
+      <DependentUpon>FormMasterUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="FormReport.cs">
       <SubType>Form</SubType>
@@ -102,8 +114,14 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMaster.resx">
-      <DependentUpon>FormMaster.cs</DependentUpon>
+    <EmbeddedResource Include="FormMasterCreate.resx">
+      <DependentUpon>FormMasterCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMasterDelete.resx">
+      <DependentUpon>FormMasterDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMasterUpdate.resx">
+      <DependentUpon>FormMasterUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

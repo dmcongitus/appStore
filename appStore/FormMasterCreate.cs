@@ -10,9 +10,9 @@ using System.Windows.Forms;
 using FireSharp.Response;
 namespace appStore
 {
-    public partial class FormMaster : Form
+    public partial class FormMasterCreate : Form
     {
-        public FormMaster()
+        public FormMasterCreate()
         {
             InitializeComponent();
         }
@@ -31,9 +31,8 @@ namespace appStore
                 type = txbType.Text
             };
             count = await Counter.getSizeData();
-            count.countProduct = (Convert.ToInt32(count.countProduct)+1).ToString();
             var client = HTTPRequest.getInstance();
-            
+
             SetResponse response = await client.SetTaskAsync("product/" + count.countProduct, data);
             // productData dataResult = response.ResultAs<productData>();
             Counter.updateCounter("product");

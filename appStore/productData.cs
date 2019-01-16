@@ -12,7 +12,6 @@ namespace appStore
         public string name { get; set; }
         public string rate { get; set; }
         public string saleAmount { get; set; }
-        public string status { get; set; }
         public string totalAmount { get; set; }
         public string type { get; set; }
     }
