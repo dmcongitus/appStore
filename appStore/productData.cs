@@ -8,12 +8,12 @@ namespace appStore
 {
     class productData
     {
-        string delete;
-        string name;
-        int rate;
-        int saleAmount;
-        string status;
-        int totalAmount;
-        string type;
+        public string deleted { get; set; }
+        public string name { get; set; }
+        public string rate { get; set; }
+        public string saleAmount { get; set; }
+        public string status { get; set; }
+        public string totalAmount { get; set; }
+        public string type { get; set; }
     }
 }

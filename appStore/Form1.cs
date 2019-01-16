@@ -8,8 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using FireSharp.Config;
-using FireSharp.Interfaces;
+
 using FireSharp.Response;
 
 namespace appStore
@@ -46,8 +45,9 @@ namespace appStore
             FirebaseResponse response = await client.GetTaskAsync("user");
             
             userData data = response.ResultAs<userData>();
-            
-            if(dataInput.account == data.account && dataInput.password == data.password)
+
+         
+            if (dataInput.account == data.account && dataInput.password == data.password)
             {
                 var frm = new Form2();
                 frm.Location = this.Location;

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using FireSharp.Response;
 namespace appStore
 {
     public partial class FormMaster : Form
@@ -17,6 +17,28 @@ namespace appStore
             InitializeComponent();
         }
 
-     
+       
+        private async void btnCheckCreate_Click(object sender, EventArgs e)
+        {
+            Counter count = new Counter();
+            var data = new productData
+            {
+                deleted = "false",
+                name = txbName.Text,
+                rate = txbRate.Text,
+                saleAmount = "0",
+                totalAmount = txbTotalAmount.Text,
+                type = txbType.Text
+            };
+            count = await Counter.getSizeData();
+            count.countProduct = (Convert.ToInt32(count.countProduct)+1).ToString();
+            var client = HTTPRequest.getInstance();
+            
+            SetResponse response = await client.SetTaskAsync("product/" + count.countProduct, data);
+            // productData dataResult = response.ResultAs<productData>();
+            Counter.updateCounter("product");
+            MessageBox.Show("Add Data Oke", count.countProduct);
+
+        }
     }
 }

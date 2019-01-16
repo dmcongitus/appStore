@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCheckCreate = new System.Windows.Forms.Button();
             this.txbType = new System.Windows.Forms.TextBox();
             this.txbTotalAmount = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnRead = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
-            this.btnOkCreate = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +61,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnOkCreate);
+            this.panel2.Controls.Add(this.btnCheckCreate);
             this.panel2.Controls.Add(this.txbType);
             this.panel2.Controls.Add(this.txbTotalAmount);
             this.panel2.Controls.Add(this.label4);
@@ -74,6 +74,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(681, 343);
             this.panel2.TabIndex = 1;
+            // 
+            // btnCheckCreate
+            // 
+            this.btnCheckCreate.Location = new System.Drawing.Point(87, 184);
+            this.btnCheckCreate.Name = "btnCheckCreate";
+            this.btnCheckCreate.Size = new System.Drawing.Size(75, 23);
+            this.btnCheckCreate.TabIndex = 2;
+            this.btnCheckCreate.Text = "create";
+            this.btnCheckCreate.UseVisualStyleBackColor = true;
+            this.btnCheckCreate.Click += new System.EventHandler(this.btnCheckCreate_Click);
             // 
             // txbType
             // 
@@ -175,15 +185,6 @@
             this.btnCreate.Text = "CREATE";
             this.btnCreate.UseVisualStyleBackColor = true;
             // 
-            // btnOkCreate
-            // 
-            this.btnOkCreate.Location = new System.Drawing.Point(87, 184);
-            this.btnOkCreate.Name = "btnOkCreate";
-            this.btnOkCreate.Size = new System.Drawing.Size(75, 23);
-            this.btnOkCreate.TabIndex = 2;
-            this.btnOkCreate.Text = "create";
-            this.btnOkCreate.UseVisualStyleBackColor = true;
-            // 
             // FormMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,6 +216,6 @@
         private System.Windows.Forms.TextBox txbName;
         private System.Windows.Forms.TextBox txbType;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnOkCreate;
+        private System.Windows.Forms.Button btnCheckCreate;
     }
 }
